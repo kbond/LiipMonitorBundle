@@ -37,7 +37,7 @@ class HealthCheckCommand extends ContainerAwareCommand
         $runner = $this->getContainer()->get('liip_monitor.runner');
         $runner->addReporter(new ConsoleReporter($output));
 
-        if ($this->getContainer()->getParameter('liip_monitor.reporter.swift_mailer.enabled') &&
+        if ($this->getContainer()->has('liip_monitor.reporter.swift_mailer') &&
             !$input->getOption('no-mailer')
         ) {
             $runner->addReporter($this->getContainer()->get('liip_monitor.reporter.swift_mailer'));
