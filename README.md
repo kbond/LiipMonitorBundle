@@ -197,6 +197,11 @@ To run health checks as a composer post-install or post-update script, simply ad
 ```yaml
 liip_monitor:
     enable_controller:    false
+    mailer:
+        enabled:          false
+        recipient:        ~
+        sender:           ~
+        subject:          ~
     checks:
         php_extensions:       []
 
